@@ -11,7 +11,7 @@ source:
   sha256: f73ec358a68605a411c947f254cd39dc8991c61aa4fdad0b9ce2d7434ce32b4f
 
 build:
-  number: 1
+  number: 0
   script_env: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
 
 outputs:
@@ -49,13 +49,16 @@ outputs:
     requirements:
       build:
         - {{ compiler('cxx') }}
+        - cmake
+        - ninja
       host:
-        - python
-        - setuptools
-        - setuptools_scm
-        - pip
-        - pyxtensor
+        - xtensor
         - eigen
+        - pybind11
+        - pyxtensor
+        - python
+        - pip
+        - setuptools_scm
       run:
         - python
 
