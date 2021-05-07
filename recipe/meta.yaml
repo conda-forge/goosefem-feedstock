@@ -72,8 +72,8 @@ outputs:
 
 about:
   home: https://github.com/{{ org }}/{{ name }}
-  license: GPL3
-  license_family: GPL3
+  license: GPL-3.0
+  license_family: GPL
   license_file: LICENSE
   summary: Finite element simulations.
   description: Finite element simulations.
