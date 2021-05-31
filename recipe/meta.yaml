@@ -55,8 +55,10 @@ outputs:
         - xtensor
         - eigen
         - pybind11
+        - xtensor-python
         - pyxtensor
         - python
+        - numpy
         - pip
         - setuptools_scm
       run:
