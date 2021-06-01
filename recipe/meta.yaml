@@ -1,6 +1,6 @@
 {% set org = "tdegeus" %}
 {% set name = "GooseFEM" %}
-{% set version = "0.12.1" %}
+{% set version = "0.12.2" %}
 
 package:
   name: {{ name|lower }}-split
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/{{ org }}/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: f73ec358a68605a411c947f254cd39dc8991c61aa4fdad0b9ce2d7434ce32b4f
+  sha256: 6631764e2002208d7c0d0d5b4bd07da564544b2575631023295bbf91055a17a4
 
 build:
   number: 0
@@ -55,8 +55,10 @@ outputs:
         - xtensor
         - eigen
         - pybind11
+        - xtensor-python
         - pyxtensor
         - python
+        - numpy
         - pip
         - setuptools_scm
       run:
