@@ -3,7 +3,7 @@ About goosefem-split
 
 Home: https://github.com/tdegeus/GooseFEM
 
-Package license: GPL-3.0
+Package license: GPL-3.0-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/goosefem-feedstock/blob/master/LICENSE.txt)
 
