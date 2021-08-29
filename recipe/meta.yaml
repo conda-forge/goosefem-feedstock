@@ -1,6 +1,6 @@
 {% set org = "tdegeus" %}
 {% set name = "GooseFEM" %}
-{% set version = "0.12.9" %}
+{% set version = "0.12.10" %}
 
 package:
   name: {{ name|lower }}-split
@@ -8,11 +8,12 @@ package:
 
 source:
   url: https://github.com/{{ org }}/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: df71cf376267741da33c6ae2da228578084dc1672cf8f71a0f4a1fc75fdde211
+  sha256: 7f4084ad0e8d6af08f61cdbae1de35dc89aff0120054b35055fa2f237883136c
 
 build:
   number: 0
   script_env: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
+  skip: True  # [python_impl == 'pypy']
 
 outputs:
 
@@ -29,8 +30,8 @@ outputs:
       host:
         - xtensor
       run:
-        - xtensor
         - eigen
+        - xtensor
 
     test:
       commands:
@@ -49,21 +50,23 @@ outputs:
       build:
         - python                              # [build_platform != target_platform]
         - cross-python_{{ target_platform }}  # [build_platform != target_platform]
-        - numpy                               # [build_platform != target_platform]
+        - numpy *                             # [build_platform != target_platform]
         - setuptools_scm                      # [build_platform != target_platform]
         - {{ compiler('cxx') }}
         - cmake
         - ninja
       host:
         - eigen
-        - numpy
+        - numpy *
         - pip
         - pybind11
         - python
+        - scikit-build
         - setuptools_scm
         - xtensor
         - xtensor-python
       run:
+        - numpy *
         - python
 
     test:
@@ -71,6 +74,7 @@ outputs:
         - {{ name }}
       commands:
         - pip check
+        - python -c "import {{ name }}; {{ name }}.version()"
       requires:
         - pip
 
