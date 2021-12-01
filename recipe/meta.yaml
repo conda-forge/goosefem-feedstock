@@ -1,6 +1,6 @@
 {% set org = "tdegeus" %}
 {% set name = "GooseFEM" %}
-{% set version = "0.12.10" %}
+{% set version = "0.13.0" %}
 
 package:
   name: {{ name|lower }}-split
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://github.com/{{ org }}/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 7f4084ad0e8d6af08f61cdbae1de35dc89aff0120054b35055fa2f237883136c
+  sha256: 0fba23ef7325f0947a83e6ca9fc149d3319d5ab340f9bd4b12db793c064e03d1
 
 build:
-  number: 1
+  number: 0
   script_env: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   skip: True  # [python_impl == 'pypy']
 
