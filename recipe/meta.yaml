@@ -1,6 +1,6 @@
 {% set org = "tdegeus" %}
 {% set name = "GooseFEM" %}
-{% set version = "1.1.0" %}
+{% set version = "1.1.1" %}
 
 package:
   name: {{ name|lower }}-split
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/{{ org }}/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: cb77146f5cdd4867a5ed8aa141cf1c391772c3e8fc0d9c29f99d570f48e35506
+  sha256: 598678606cf23e6498da251696b8c311960ad06fd246c32e1cfb4a4dfdd64a99
 
 build:
   number: 0
