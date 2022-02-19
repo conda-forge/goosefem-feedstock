@@ -54,13 +54,14 @@ outputs:
         - setuptools_scm                      # [build_platform != target_platform]
         - {{ compiler('cxx') }}
         - cmake
-        - ninja
         - make  # [unix]
+        - ninja
       host:
         - eigen
         - numpy *
         - pip
         - pybind11
+        - pybind11-abi
         - python
         - scikit-build
         - setuptools_scm
