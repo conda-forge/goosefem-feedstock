@@ -1,6 +1,6 @@
 {% set org = "tdegeus" %}
 {% set name = "GooseFEM" %}
-{% set version = "1.1.1" %}
+{% set version = "1.2.0" %}
 
 package:
   name: {{ name|lower }}-split
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://github.com/{{ org }}/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 598678606cf23e6498da251696b8c311960ad06fd246c32e1cfb4a4dfdd64a99
+  sha256: 62662c05151a27f7e5b70cb8a84598e8e6ee24ca0b565a20ded51e74ab1008c0
 
 build:
-  number: 1
+  number: 0
   script_env: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
 
 outputs:
@@ -46,8 +46,8 @@ outputs:
     script: install_python.bat  # [win]
 
     build:
-     script_env: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
-     skip: true  # [python_impl == 'pypy']
+      script_env: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
+      skip: true  # [python_impl == 'pypy']
 
     requirements:
       build:
