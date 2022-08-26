@@ -12,7 +12,6 @@ source:
 
 build:
   number: 0
-  script_env: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
 
 outputs:
 
@@ -20,6 +19,9 @@ outputs:
 
     script: install.sh  # [unix]
     script: install.bat  # [win]
+
+    build:
+      script_env: SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
 
     requirements:
       build:
@@ -79,7 +81,7 @@ outputs:
         - {{ name }}
       commands:
         - pip check
-        - python -c "import {{ name }}; {{ name }}.version()"
+        - python -c "import {{ name }}; assert {{ name }}.version() == '{{ version }}'"
       requires:
         - pip
 
