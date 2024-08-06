@@ -1,9 +1,6 @@
+c_stdlib:
+- vs
 channel_sources:
-- conda-forge
-- conda-forge
-- conda-forge/label/python_rc,conda-forge
-- conda-forge
-- conda-forge
 - conda-forge
 channel_targets:
 - conda-forge main
@@ -34,4 +31,3 @@ target_platform:
 zip_keys:
 - - python
   - python_impl
-  - channel_sources
